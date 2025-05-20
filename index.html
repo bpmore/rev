@@ -7,7 +7,11 @@ layout: default
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
         <h1>{{ post.title }}</h1>
-
+        {% if page.image %}
+        <figure>
+          <img src="{{ page.image | relative_url }}" alt="Featured image for {{ page.title }}">
+        </figure>
+        {% endif %}
         <div>
           <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
         </div>
